@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vego_navigation"
+    app:startDestination="@id/catalogFragment">
+
+    <action
+        android:id="@+id/popupToCatalog"
+        app:destination="@id/catalogFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/catalogFragment"
+        app:popUpToInclusive="false" />
+
+    <action
+        android:id="@+id/popupToFavorites"
+        app:destination="@id/favoritesFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/favoritesFragment"
+        app:popUpToInclusive="false" />
+
+    <action
+        android:id="@+id/popupToInfo"
+        app:destination="@id/infoFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/infoFragment"
+        app:popUpToInclusive="false" />
+
+    <action
+        android:id="@+id/popupToCart"
+        app:destination="@id/cartFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/cartFragment"
+        app:popUpToInclusive="false" />
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.emelyanov.vegocityxml.modules.cart.presentation.CartFragment"
+        android:label="CartFragment" />
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.emelyanov.vegocityxml.modules.catalog.presentation.CatalogFragment"
+        android:label="CatalogFragment" >
+        <action
+            android:id="@+id/showProductDetails"
+            app:destination="@id/productDetails"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/none"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/none"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.emelyanov.vegocityxml.modules.info.presentation.InfoFragment"
+        android:label="InfoFragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.emelyanov.vegocityxml.modules.favorites.presentation.FavoritesFragment"
+        android:label="FavoritesFragment" />
+    <fragment
+        android:id="@+id/productDetails"
+        android:name="com.emelyanov.vegocityxml.shared.presentation.ProductDetailsFragment"
+        android:label="fragment_product_details_dialog"
+        tools:layout="@layout/fragment_product_details" />
+</navigation>
